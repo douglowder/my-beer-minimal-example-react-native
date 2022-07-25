@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "nl.beerinabox.mybeer",
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "versionCode": 6
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "icon": "./src/assets/icon.png",
+    "ios": {
+      "bundleIdentifier": "nl.beerinabox.my-beer",
+      "buildNumber": "5",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "We are using your camera to scan qr-codes from the beer bottles."
+      },
+      "supportsTablet": false
+    },
+    "name": "My Beer",
+    "orientation": "portrait",
+    "owner": "beerinabox",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera when you decide to take a picture for your review",
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos when you decide to add a photo to your review"
+        }
+      ]
+    ],
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "scheme": "my-beer",
+    "slug": "my-beer",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/${projectID}"
+    },
+    "version": "1.0.4"
+  }
+}
