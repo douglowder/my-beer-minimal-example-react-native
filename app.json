@@ -5,9 +5,10 @@
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "nl.beerinabox.mybeer",
+      "package": "dev.douglowderexpo.mybeer",
       "permissions": [
-        "android.permission.CAMERA"
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
       ],
       "versionCode": 6
     },
@@ -16,7 +17,7 @@
     ],
     "icon": "./src/assets/icon.png",
     "ios": {
-      "bundleIdentifier": "nl.beerinabox.my-beer",
+      "bundleIdentifier": "dev.douglowderexpo.my-beer",
       "buildNumber": "5",
       "config": {
         "usesNonExemptEncryption": false
@@ -28,7 +29,6 @@
     },
     "name": "My Beer",
     "orientation": "portrait",
-    "owner": "beerinabox",
     "plugins": [
       [
         "expo-image-picker",
@@ -47,10 +47,6 @@
       "image": "./src/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/${projectID}"
     },
     "version": "1.0.4"
   }

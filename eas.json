@@ -7,10 +7,15 @@
       "developmentClient": true,
       "distribution": "internal"
     },
+    "preview": {
+      "channel": "preview",
+      "distribution": "internal"
+    },
     "production": {
       "cache": {
         "key": "2022-07-25 15:28:00"
-      }
+      },
+      "channel": "production"
     }
   },
   "submit": {
