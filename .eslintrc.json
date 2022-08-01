@@ -32,6 +32,7 @@
     "prettier",
     "react",
     "react-hooks",
+    "simple-import-sort",
     "sort-keys-fix"
   ],
   "rules": {
@@ -65,20 +66,7 @@
     ],
     "import/no-unresolved": "error",
     "import/prefer-default-export": "off",
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "newlines-between": "always"
-      }
-    ],
+    "import/order": "off",
     "no-shadow": "off",
     "no-unused-vars": "off",
     "no-use-before-define": [
@@ -98,8 +86,18 @@
         ]
       }
     ],
+    "react/jsx-sort-props": ["error", {
+      "callbacksLast": false,
+      "shorthandFirst": true,
+      "shorthandLast": false,
+      "reservedFirst": false,
+      "ignoreCase": true
+    }],
     "react/prop-types": "off",
     "react/require-default-props": "off",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
+    "sort-imports": "off",
     "sort-keys-fix/sort-keys-fix": "error"
   },
   "settings": {

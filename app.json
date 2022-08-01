@@ -17,7 +17,7 @@
     "icon": "./src/assets/icon.png",
     "ios": {
       "bundleIdentifier": "nl.beerinabox.my-beer",
-      "buildNumber": "5",
+      "buildNumber": "6",
       "config": {
         "usesNonExemptEncryption": false
       },
@@ -41,7 +41,7 @@
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
-    "scheme": "my-beer",
+    "scheme": "mybeer",
     "slug": "my-beer",
     "splash": {
       "image": "./src/assets/splash.png",
@@ -49,8 +49,7 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/${projectID}"
+      "fallbackToCacheTimeout": 0
     },
     "version": "1.0.4"
   }
