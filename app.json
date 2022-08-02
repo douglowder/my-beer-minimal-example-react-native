@@ -17,7 +17,7 @@
     "icon": "./src/assets/icon.png",
     "ios": {
       "bundleIdentifier": "nl.beerinabox.my-beer",
-      "buildNumber": "6",
+      "buildNumber": "8",
       "config": {
         "usesNonExemptEncryption": false
       },
