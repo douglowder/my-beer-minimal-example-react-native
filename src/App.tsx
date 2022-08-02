@@ -1,5 +1,7 @@
 import 'react-native-get-random-values';
 
+import { Asset } from 'expo-asset';
+import * as FileSystem from 'expo-file-system';
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -20,10 +22,15 @@ export function App() {
 
   React.useEffect(() => {
     // @todo: Find a better place to put most of this logic
-    function loadStaticData() {
-      /* eslint-disable @typescript-eslint/no-var-requires, global-require */
+    async function loadStaticData() {
+      /* eslint-disable @typescript-eslint/no-var-requires, global-require, prefer-const, @typescript-eslint/no-unsafe-argument */
       try {
-        const beersDirty = require('~/assets/data/beers-production.json') as TBeer[];
+        // @note: this crashes
+        // const beersDirty = require('~/assets/data/beers-production.json') as TBeer[];
+
+        const beersResult = await Asset.loadAsync(require('~/assets/data/beers-production.txt'));
+        const beersRawText = await FileSystem.readAsStringAsync(beersResult[0].localUri || '');
+        const beersDirty = JSON.parse(beersRawText) as TBeer[];
 
         const beersCleaned = beersDirty?.map((beer) => ({
           // @ts-expect-error ignore-next-line
@@ -40,7 +47,12 @@ export function App() {
         console.log(error);
       }
       try {
-        const breweriesDirty = require('~/assets/data/breweries-production.json') as TBrewery[];
+        // @note: this crashes
+        // const breweriesDirty = require('~/assets/data/breweries-production.json') as TBrewery[];
+
+        const breweriesResult = await Asset.loadAsync(require('~/assets/data/breweries-production.txt'));
+        const breweriesRawText = await FileSystem.readAsStringAsync(breweriesResult[0].localUri || '');
+        const breweriesDirty = JSON.parse(breweriesRawText) as TBrewery[];
 
         const breweriesCleaned = breweriesDirty?.map((brewery) => ({
           city: String(brewery.city),
@@ -64,7 +76,12 @@ export function App() {
         console.log(error);
       }
       try {
-        const beerstylesDirty = require('~/assets/data/beerstyles-production.json') as TBeerstyle[];
+        // @note: this crashes
+        // const beerstylesDirty = require('~/assets/data/beerstyles-production.json') as TBeerstyle[];
+
+        const beerstylesResult = await Asset.loadAsync(require('~/assets/data/beerstyles-production.txt'));
+        const beerstylesRawText = await FileSystem.readAsStringAsync(beerstylesResult[0].localUri || '');
+        const beerstylesDirty = JSON.parse(beerstylesRawText) as TBeerstyle[];
 
         const beerstylesCleaned = beerstylesDirty?.map((style) => ({
           // @ts-expect-error ignore-next-line
@@ -99,6 +116,7 @@ export function App() {
       }
       /* eslint-enable @typescript-eslint/no-var-requires, global-require */
     }
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     loadStaticData();
   }, []);
 
