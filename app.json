@@ -41,12 +41,16 @@
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
-    "scheme": "my-beer",
+    "scheme": "mybeer",
     "slug": "my-beer",
     "splash": {
       "image": "./src/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/${projectID}"
     },
     "version": "1.0.4"
   }
